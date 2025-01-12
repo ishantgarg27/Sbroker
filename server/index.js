@@ -12,11 +12,12 @@ const dotenv = require("dotenv");
 dotenv.config();
 const PORT = process.env.PORT || 4000;
 
+
 // Connect to the database
 database.connect();
 app.use(
   cors({
-    origin: "https://sbroker.vercel.app", // Allow your frontend's URL
+    origin: "https://sbroker-git-master-ishantgarg27s-projects.vercel.app", // Allow your frontend's URL
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"], // Explicitly allow all methods
     allowedHeaders: [
       "X-CSRF-Token",
@@ -33,8 +34,7 @@ app.use(
   })
 );
 
-// Ensure Express handles preflight (OPTIONS) requests
-app.options("*", cors());
+ 
 // Middleware
 app.use(express.json());
 app.use(cookieparser());
